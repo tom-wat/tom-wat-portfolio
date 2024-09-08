@@ -1,6 +1,7 @@
 ---
 import GridWrapper from "./GridWrapper.astro";
-const { title, description, className, isExternalLink } = Astro.props;
+import LinkButton from "./LinkButton.astro";
+const { title, description, className, href, isExternalLink } = Astro.props;
 ---
 
 <GridWrapper
@@ -21,6 +22,7 @@ const { title, description, className, isExternalLink } = Astro.props;
   <div class=`${className} bottom-left box`></div>
   <div class=`${className} bottom-right box`>
     <div class="description">{description}</div>
+    <LinkButton href="#top" text="詳細に進む" />
   </div>
 </GridWrapper>
 
@@ -28,11 +30,14 @@ const { title, description, className, isExternalLink } = Astro.props;
   .box {
     display: grid;
     place-content: center;
-    min-height: 50vh;
+    padding: 3rem;
+  }
+  .title {
+    font-size: 2.5rem;
   }
   .blue {
     &.top-left {
-      color: aliceblue;
+      color: white;
       background-color: hsl(220, 100%, 45%);
     }
     &.top-right {
@@ -42,7 +47,7 @@ const { title, description, className, isExternalLink } = Astro.props;
       background-color: hsl(190, 100%, 90%);
     }
     &.bottom-right {
-      color: aliceblue;
+      color: white;
       background-color: hsl(220, 100%, 45%);
     }
   }

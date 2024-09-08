@@ -1,0 +1,41 @@
+---
+interface Props {
+  href: string;
+  icon?: string;
+  text: string;
+  target?: string;
+}
+
+const { href, icon, text, target = "_self" } = Astro.props;
+---
+
+<a href={href} class="button-link" target={target}>
+  <span class="text">{text}</span>
+  <span class="icon" set:html={icon} />
+</a>
+
+<style>
+  .button-link {
+    display: inline-block;
+    width: max-content;
+    font-size: 1rem;
+    border-radius: 5rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: black;
+    background-color: white;
+    transition:
+      color 0.2s,
+      background-color 0.2s;
+    &:focus-visible {
+      background-color: hsl(45, 100%, 50%);
+      outline: 2px solid white;
+      outline-offset: 4px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: hsl(45, 100%, 50%);
+      }
+    }
+  }
+</style>
