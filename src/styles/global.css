@@ -1,0 +1,91 @@
+:root {
+  --clamp-viewport-min: 320;
+  --clamp-viewport-max: 767;
+  --clamp-min: 14;
+  --clamp-max: 16;
+}
+
+/* @font-face {
+  font-family: "jost";
+  src: url("/sunshine-solutions/fonts/jost-v15-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "cormorant garamond";
+  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-500.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "cormorant garamond";
+  src: url("/sunshine-solutions/fonts/cormorant-garamond-v16-latin-700.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "shippori mincho";
+  src: url("/sunshine-solutions/fonts/shippori-regular-subset.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "noto sans";
+  src: url("/sunshine-solutions/fonts/NotoSansJP-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "noto sans";
+  src: url("/sunshine-solutions/fonts/NotoSansJP-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+} */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  --clamp-root-font-size: 16;
+
+  --clamp-slope: calc(
+    (var(--clamp-max) - var(--clamp-min)) /
+      (var(--clamp-viewport-max) - var(--clamp-viewport-min))
+  );
+  --clamp-intersect: calc(
+    var(--clamp-max) - (var(--clamp-slope) * var(--clamp-viewport-max))
+  );
+  --clamp-variable: calc(
+    var(--clamp-intersect) * (1rem / var(--clamp-root-font-size)) +
+      (var(--clamp-slope) * 100vw)
+  );
+  --clamp: clamp(
+    calc(var(--clamp-min) * (1rem / var(--clamp-root-font-size))),
+    var(--clamp-variable),
+    calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
+  );
+}
+@media (min-width: 768px) {
+  :root {
+    --clamp-viewport-min: 768;
+    --clamp-viewport-max: 1024;
+  }
+}
+@media (min-width: 1025px) {
+  :root {
+    --clamp-viewport-min: 1280;
+    --clamp-viewport-max: 2560;
+  }
+}
+
+img {
+  vertical-align: bottom;
+}

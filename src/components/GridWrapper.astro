@@ -1,0 +1,74 @@
+---
+const calcurateRestWIdth = (paddingRem, columnNumber, gapRem) => {
+  const gutterNumber = columnNumber - 1;
+  const restWidth = paddingRem * 2 + gapRem * gutterNumber;
+  return `${restWidth}rem`;
+};
+
+const {
+  paddingPC,
+  columnPC,
+  gapPC,
+  paddingTab,
+  columnTab,
+  gapTab,
+  paddingSp,
+  columnSp,
+  gapSp,
+} = Astro.props;
+
+const restWidthPC = calcurateRestWIdth(paddingPC, columnPC, gapPC);
+const restWidthTab = calcurateRestWIdth(paddingTab, columnTab, gapTab);
+const restWidthSp = calcurateRestWIdth(paddingSp, columnSp, gapSp);
+---
+
+<div class="wrapper">
+  <slot />
+</div>
+
+<style
+  define:vars={{
+    paddingPC,
+    gapPC,
+    columnPC,
+    restWidthPC,
+    paddingTab,
+    gapTab,
+    columnTab,
+    restWidthTab,
+    paddingSp,
+    gapSp,
+    columnSp,
+    restWidthSp,
+  }}
+>
+  .wrapper {
+    padding: var(--paddingSp);
+    width: 100%;
+    display: grid;
+    gap: var(--gapSp);
+    grid-template-columns: repeat(
+      var(--columnSp),
+      calc((100vw - var(--restWidthSp)) / var(--columnSp))
+    );
+    grid-auto-rows: auto;
+    /* max-width: 1800px;
+    margin: 0 auto; */
+    @media (min-width: 768px) {
+      padding: var(--paddingTab);
+      gap: var(--gapTab);
+      grid-template-columns: repeat(
+        var(--columnTab),
+        calc((100vw - var(--restWidthTab)) / var(--columnTab))
+      );
+    }
+    @media (min-width: 1025px) {
+      padding: var(--paddingPC);
+      gap: var(--gapPC);
+      grid-template-columns: repeat(
+        var(--columnPC),
+        calc((100vw - var(--restWidthPC)) / var(--columnPC))
+      );
+    }
+  }
+</style>

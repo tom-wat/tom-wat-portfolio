@@ -1,0 +1,49 @@
+---
+import GridWrapper from "./GridWrapper.astro";
+const { title, description, className, isExternalLink } = Astro.props;
+---
+
+<GridWrapper
+  paddingPC="0"
+  columnPC="2"
+  gapPC="0"
+  paddingTab="0"
+  columnTab="2"
+  gapTab="0"
+  paddingSp="0"
+  columnSp="2"
+  gapSp="0"
+>
+  <div class=`${className} top-left box`>
+    <div class="title">{title}</div>
+  </div>
+  <div class=`${className} top-right box`></div>
+  <div class=`${className} bottom-left box`></div>
+  <div class=`${className} bottom-right box`>
+    <div class="description">{description}</div>
+  </div>
+</GridWrapper>
+
+<style>
+  .box {
+    display: grid;
+    place-content: center;
+    min-height: 50vh;
+  }
+  .blue {
+    &.top-left {
+      color: aliceblue;
+      background-color: hsl(220, 100%, 45%);
+    }
+    &.top-right {
+      background-color: hsl(200, 100%, 50%);
+    }
+    &.bottom-left {
+      background-color: hsl(190, 100%, 90%);
+    }
+    &.bottom-right {
+      color: aliceblue;
+      background-color: hsl(220, 100%, 45%);
+    }
+  }
+</style>

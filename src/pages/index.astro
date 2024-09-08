@@ -1,9 +1,27 @@
 ---
+import Box from "../components/Box.astro";
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 ---
 
 <Layout>
   <body>
     <h1>Portfolio</h1>
+    <Box title="name" description="about" className="blue" />
+    <Box title="title" description="description" className="blue" />
   </body>
 </Layout>
+
+<style>
+  h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
