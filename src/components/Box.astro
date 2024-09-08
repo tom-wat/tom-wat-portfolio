@@ -1,7 +1,15 @@
 ---
 import GridWrapper from "./GridWrapper.astro";
 import LinkButton from "./LinkButton.astro";
-const { title, description, className, href, isExternalLink } = Astro.props;
+const {
+  title,
+  description,
+  className,
+  isLink = true,
+  isExternalLink = false,
+  hrefDetail,
+  hrefExternal,
+} = Astro.props;
 ---
 
 <GridWrapper
@@ -34,11 +42,16 @@ const { title, description, className, href, isExternalLink } = Astro.props;
   }
   .title {
     font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .description {
+    width: 40ch;
+    margin-bottom: 2rem;
   }
   .blue {
     &.top-left {
       color: white;
-      background-color: hsl(220, 100%, 45%);
+      background-color: hsl(220, 100%, 39%);
     }
     &.top-right {
       background-color: hsl(200, 100%, 50%);
@@ -48,7 +61,7 @@ const { title, description, className, href, isExternalLink } = Astro.props;
     }
     &.bottom-right {
       color: white;
-      background-color: hsl(220, 100%, 45%);
+      background-color: hsl(220, 100%, 39%);
     }
   }
 </style>
