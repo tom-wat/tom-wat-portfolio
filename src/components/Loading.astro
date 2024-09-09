@@ -1,0 +1,15 @@
+---
+
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector("body") as HTMLElement;
+
+    function showContents() {
+      body.classList.add("loaded");
+    }
+
+    window.addEventListener("load", showContents);
+  });
+</script>
