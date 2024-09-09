@@ -12,72 +12,70 @@ const {
 ---
 
 <GridWrapper
-  paddingPC="0"
-  columnPC="2"
-  gapPC="0"
-  paddingTab="0"
-  columnTab="2"
-  gapTab="0"
-  paddingSp="0"
-  columnSp="2"
-  gapSp="0"
+  paddingPC={0}
+  columnPC={8}
+  gapPC={1}
+  paddingTab={0}
+  columnTab={8}
+  gapTab={1}
+  paddingSp={0}
+  columnSp={8}
+  gapSp={1}
 >
-  <div class=`${className} top-left box`>
+
+  <div class=`${className} left`>
     <div class="title">{title}</div>
-  </div>
-  <div class=`${className} top-right box`></div>
-  <div class=`${className} bottom-left box`>
-    {imgSrc && <img src=`${imgSrc}.avif` alt="" />
-  }
-  </div>
-  <div class=`${className} bottom-right box`>
     <div class="description">{description}</div>
     {(hrefDetail || hrefExternal) && <div class="link-area">
       {hrefDetail && <LinkButton href=`${hrefDetail}` text="詳細を見る" iconPath="/portfolio/icons/arrow-right.svg"/>}
       {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/portfolio/icons/external-link.svg" target="_blank"/>}  
     </div>}
   </div>
+  <div class=`${className} right`>
+    {imgSrc && <img src=`${imgSrc}.avif` alt="" />
+  }
+  </div>
+
 </GridWrapper>
 
 <style>
-  .box {
-    display: grid;
-    place-content: center;
-    padding: 3rem;
-  }
   .title {
     font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 2rem;
   }
   .description {
+    font-weight: 600;
     width: 40ch;
     &:has(+ div){
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
   }
-  .bottom-left {
+  .left {
+    padding-block: 4rem;
+    grid-column: 2/5;
+  }
+  .right {
+    display: grid;
+    padding-inline: 0;
+    grid-column: 5/8;
     & img {
-      border-radius: 1rem;
-    }
+    border-radius: 1rem;
+    width: 100%;
+    align-self: center;
+  }
   }
   .link-area{
     display: flex;
     gap: 1rem;
   }
-  .blue {
-    &.top-left {
-      color: white;
-      background-color: hsl(220, 100%, 39%);
+  .one-blue {
+    &.left {
+      color: var(--color-white);
+      background-color: var(--color-blue);
     }
-    &.top-right {
-      background-color: hsl(200, 100%, 50%);
-    }
-    &.bottom-left {
-      background-color: hsl(190, 100%, 90%);
-    }
-    &.bottom-right {
-      color: white;
-      background-color: hsl(220, 100%, 39%);
+    &.right {
+      background-color: var(--color-blue);
     }
   }
 </style>

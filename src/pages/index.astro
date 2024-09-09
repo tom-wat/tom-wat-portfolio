@@ -8,34 +8,37 @@ import "../styles/global.css";
 <Layout>
   <body>
     <h1>Portfolio</h1>
-    <Box
-      title="Watabe Tomonari"
-      description="個人的なプロジェクトを公開しています。"
-      className="blue"
-      isLink={false}
-    />
-    <Box
-      title="Color Value Drawing"
-      description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
-      className="blue"
-      imgSrc="/portfolio/images/color-value-drawing-top"
-      hrefDetail="/portfolio/works/color-value-drawing"
-      hrefExternal="https://tom-wat.github.io/color-value-drawing/"
-    />
-    <Box
-      title="Length Drawing"
-      description="画像の任意の2点間の距離をそのまま画像上に描画するアプリケーション"
-      className="blue"
-      imgSrc="/portfolio/images/length-drawing-top"
-      hrefDetail="/portfolio/works/length-drawing"
-      hrefExternal="https://tom-wat.github.io/length-drawing/"
-    />
+    <div class="wrapper">
+      <Box
+        title="Watabe Tomonari"
+        description="個人的なプロジェクトを公開しています。"
+        className="one-blue"
+        isLink={false}
+      />
+      <Box
+        title="Color Value Drawing"
+        description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
+        className="one-blue"
+        imgSrc="/portfolio/images/color-value-drawing-top"
+        hrefDetail="/portfolio/works/color-value-drawing"
+        hrefExternal="https://tom-wat.github.io/color-value-drawing/"
+      />
+      <Box
+        title="Length Drawing"
+        description="画像の任意の2点間の距離をそのまま画像上に描画するアプリケーション"
+        className="one-blue"
+        imgSrc="/portfolio/images/length-drawing-top"
+        hrefDetail="/portfolio/works/length-drawing"
+        hrefExternal="https://tom-wat.github.io/length-drawing/"
+      />
+    </div>
   </body>
   <Loading />
 </Layout>
 
 <style>
   body {
+    background-color: hsl(220, 100%, 39%);
     opacity: 0;
     &.loaded {
       opacity: 1;
@@ -51,5 +54,9 @@ import "../styles/global.css";
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+  .wrapper {
+    display: grid;
+    gap: 3rem;
   }
 </style>

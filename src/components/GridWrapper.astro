@@ -1,10 +1,14 @@
 ---
-const calcurateRestWIdth = (paddingRem, columnNumber, gapRem) => {
+const calcurateGrid = (paddingRem, columnNumber, gapRem) => {
   const gutterNumber = columnNumber - 1;
   const restWidth = paddingRem * 2 + gapRem * gutterNumber;
-  return `${restWidth}rem`;
+  return {
+    padding: `${paddingRem}rem`,
+    column: columnNumber,
+    gap: `${gapRem}rem`,
+    restWidth: `${restWidth}rem`,
+  };
 };
-
 const {
   paddingPC,
   columnPC,
@@ -16,10 +20,24 @@ const {
   columnSp,
   gapSp,
 } = Astro.props;
-
-const restWidthPC = calcurateRestWIdth(paddingPC, columnPC, gapPC);
-const restWidthTab = calcurateRestWIdth(paddingTab, columnTab, gapTab);
-const restWidthSp = calcurateRestWIdth(paddingSp, columnSp, gapSp);
+const {
+  padding: paddingPCVar,
+  column: columnPCVar,
+  gap: gapPCVar,
+  restWidth: restWidthPCVar,
+} = calcurateGrid(paddingPC, columnPC, gapPC);
+const {
+  padding: paddingTabVar,
+  column: columnTabVar,
+  gap: gapTabVar,
+  restWidth: restWidthTabVar,
+} = calcurateGrid(paddingTab, columnTab, gapTab);
+const {
+  padding: paddingSpVar,
+  column: columnSpVar,
+  gap: gapSpVar,
+  restWidth: restWidthSpVar,
+} = calcurateGrid(paddingSp, columnSp, gapSp);
 ---
 
 <div class="wrapper">
@@ -28,46 +46,46 @@ const restWidthSp = calcurateRestWIdth(paddingSp, columnSp, gapSp);
 
 <style
   define:vars={{
-    paddingPC,
-    gapPC,
-    columnPC,
-    restWidthPC,
-    paddingTab,
-    gapTab,
-    columnTab,
-    restWidthTab,
-    paddingSp,
-    gapSp,
-    columnSp,
-    restWidthSp,
+    paddingPCVar,
+    gapPCVar,
+    columnPCVar,
+    restWidthPCVar,
+    paddingTabVar,
+    gapTabVar,
+    columnTabVar,
+    restWidthTabVar,
+    paddingSpVar,
+    gapSpVar,
+    columnSpVar,
+    restWidthSpVar,
   }}
 >
   .wrapper {
-    padding: var(--paddingSp);
+    padding: var(--paddingSpVar);
     width: 100%;
     display: grid;
-    gap: var(--gapSp);
+    gap: var(--gapSpVar);
     grid-template-columns: repeat(
-      var(--columnSp),
-      calc((100vw - var(--restWidthSp)) / var(--columnSp))
+      var(--columnSpVar),
+      calc((100vw - var(--restWidthSpVar)) / var(--columnSpVar))
     );
     grid-auto-rows: auto;
     /* max-width: 1800px;
     margin: 0 auto; */
     @media (min-width: 768px) {
-      padding: var(--paddingTab);
-      gap: var(--gapTab);
+      padding: var(--paddingTabVar);
+      gap: var(--gapTabVar);
       grid-template-columns: repeat(
-        var(--columnTab),
-        calc((100vw - var(--restWidthTab)) / var(--columnTab))
+        var(--columnTabVar),
+        calc((100vw - var(--restWidthTabVar)) / var(--columnTabVar))
       );
     }
     @media (min-width: 1025px) {
-      padding: var(--paddingPC);
-      gap: var(--gapPC);
+      padding: var(--paddingPCVar);
+      gap: var(--gapPCVar);
       grid-template-columns: repeat(
-        var(--columnPC),
-        calc((100vw - var(--restWidthPC)) / var(--columnPC))
+        var(--columnPCVar),
+        calc((100vw - var(--restWidthPCVar)) / var(--columnPCVar))
       );
     }
   }
