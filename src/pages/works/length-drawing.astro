@@ -1,0 +1,94 @@
+---
+import GridWrapper from "../../components/GridWrapper.astro";
+import LinkButton from "../../components/LinkButton.astro";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
+  Astro.props;
+---
+
+<Layout>
+  <GridWrapper
+    paddingPC={0}
+    columnPC={8}
+    gapPC={1}
+    paddingTab={0}
+    columnTab={8}
+    gapTab={1}
+    paddingSp={0}
+    columnSp={8}
+    gapSp={1}
+  >
+    <h1 class="title">Length Drawing</h1>
+    <img
+      class="main-image"
+      src="/portfolio/images/length-drawing.avif"
+      alt=""
+    />
+    <h2 class="headline">概要</h2>
+    <p class="text">
+      画像の任意の2点間の距離をそのまま画像上に描画するアプリケーション
+    </p>
+    <h2 class="headline">課題と解決</h2>
+    <p class="text">
+      絵を描く時の下調べとして、かたちの長さを測り記録しておくことがよくありました。それを簡略化するためのアプリケーションです。簡単に長さを記録しておくことができるようになり、下調べの時間を大幅に短縮することができました。また数値の比率を変更する機能を加えることで、物の長さの基準を変更して、それぞれの比率をわかりやすい数値に切り替えられるようにすることも、自分にとって必要な機能でした。
+    </p>
+    <h2 class="headline">機能、特徴</h2>
+    <ul class="list">
+      <li>距離の描画</li>
+      <li>角度の描画</li>
+      <li>角度固定</li>
+      <li>比率変更</li>
+      <li>取り消し、やり直し</li>
+      <li>ズーム、リセット</li>
+      <li>コピー</li>
+      <li>フォントサイズの変更</li>
+      <li>キーボードショートカット</li>
+      <li>「読み込んだ画像に距離を描画した画像」のダウンロード機能</li>
+      <li>「描画した距離だけの画像」ダウンロード機能</li>
+    </ul>
+  </GridWrapper>
+</Layout>
+
+<style>
+  body {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+  .title {
+    grid-column: 2/5;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-block: 2rem;
+  }
+  .main-image {
+    grid-column: 1/-1;
+  }
+  .headline {
+    grid-column: 3/5;
+    margin-block: 2rem;
+  }
+  .text {
+    grid-column: 4/8;
+    margin-block: 1rem;
+    font-weight: 600;
+  }
+  .list {
+    margin-block-end: 4rem;
+    grid-column: 4/8;
+    & li {
+      font-weight: 600;
+      margin-block-end: 1rem;
+    }
+  }
+  .one-blue {
+    &.left {
+      color: var(--color-white);
+      background-color: var(--color-blue);
+    }
+    &.right {
+      background-color: var(--color-blue);
+    }
+  }
+</style>
