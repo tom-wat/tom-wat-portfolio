@@ -6,20 +6,24 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <Loading />
   <body>
     <h1>Portfolio</h1>
     <Box
       title="Watabe Tomonari"
       description="個人的なプロジェクトを公開しています。"
       className="blue"
+      isLink={false}
     />
     <Box
       title="Color Value Drawing"
       description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
       className="blue"
+      imgSrc="/portfolio/images/color-value-drawing-top"
+      hrefDetail="/portfolio/works/color-value-drawing"
+      hrefExternal="https://tom-wat.github.io/color-value-drawing/"
     />
   </body>
+  <Loading />
 </Layout>
 
 <style>

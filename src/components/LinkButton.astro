@@ -1,27 +1,28 @@
 ---
 interface Props {
   href: string;
-  icon?: string;
+  iconPath?: string;
   text: string;
   target?: string;
 }
 
-const { href, icon, text, target = "_self" } = Astro.props;
+const { href, iconPath, text, target = "_self" } = Astro.props;
 ---
 
 <a href={href} class="button-link" target={target}>
   <span class="text">{text}</span>
-  <span class="icon" set:html={icon} />
+  <span class="icon">
+    <img src={iconPath} alt="" />
+  </span>
 </a>
 
 <style>
   .button-link {
-    display: inline-block;
+    display: flex;
     width: max-content;
     font-size: 1rem;
     font-weight: 700;
     border-radius: 5rem;
-    display: inline-block;
     padding: 0.5rem 1.5rem;
     color: black;
     background-color: white;
@@ -38,5 +39,11 @@ const { href, icon, text, target = "_self" } = Astro.props;
         background-color: hsl(45, 100%, 50%);
       }
     }
+  }
+  .icon {
+    width: 1rem;
+    align-self: center;
+    margin-left: 0.5rem;
+    transform: translateY(-0.1rem);
   }
 </style>
