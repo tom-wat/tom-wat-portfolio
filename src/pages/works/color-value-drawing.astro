@@ -3,9 +3,6 @@ import GridWrapper from "../../components/GridWrapper.astro";
 import LinkButton from "../../components/LinkButton.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
-
-const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
-  Astro.props;
 ---
 
 <Layout>
@@ -21,11 +18,7 @@ const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
     gapSp={1}
   >
     <h1 class="title">Color Value Drawing</h1>
-    <img
-      class="main-image"
-      src="/portfolio/images/color-value-drawing.avif"
-      alt=""
-    />
+    <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
     <h2 class="headline">概要</h2>
     <p class="text">
       画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション
