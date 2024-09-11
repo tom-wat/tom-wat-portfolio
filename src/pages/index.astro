@@ -86,15 +86,20 @@ import "../styles/global.css";
     border: 0;
   }
   h2 {
+    --leading-trim: calc((1em - 1lh) / 2 - 4px);
     font-size: 2rem;
     font-weight: 700;
     margin-block: var(--leading-trim);
-    margin-block-end: 1rem;
+    margin-block-end: 0.5rem;
     @media (min-width: 768px) {
+      --leading-trim: calc((1em - 1lh) / 2 - 6px);
       font-size: 2.5rem;
+      margin-block-end: 1rem;
     }
     @media (min-width: 1025px) {
+      --leading-trim: calc((1em - 1lh) / 2 - 6px);
       font-size: 2.5rem;
+      margin-block-end: 1rem;
     }
   }
   p {
@@ -123,8 +128,8 @@ import "../styles/global.css";
   }
   .wrapper {
     display: grid;
-    gap: 2rem;
-    padding: 2.5rem 0 2.5rem 0;
+    gap: 4rem;
+    padding: 4rem 0 4rem 0;
     @media (min-width: 768px) {
       gap: 6rem;
       padding: 5.5rem 0 6rem 0;
