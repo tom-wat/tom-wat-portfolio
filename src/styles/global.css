@@ -22,7 +22,12 @@
   font-weight: 600;
   font-display: block;
 }
-
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/inter-v18-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: block;
+}
 *,
 ::before,
 ::after {
