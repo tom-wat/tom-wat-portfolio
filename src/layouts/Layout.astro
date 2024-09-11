@@ -1,6 +1,6 @@
 ---
 const { title, description } = Astro.props;
-// const socialImageURL = new URL("/portfolio/images/ogp.png", Astro.url);
+const socialImageURL = new URL("/images/ogp.png", Astro.url);
 ---
 
 <!doctype html>
@@ -9,18 +9,14 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/portfolio/favicon.svg"
-    />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta property="og:title" content="portfolio" />
-    <meta property="og:description" content="A conceptual business website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:type" content="website" /> -->
+    <meta property="og:type" content="website" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
