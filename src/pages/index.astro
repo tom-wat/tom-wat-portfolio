@@ -1,6 +1,7 @@
 ---
 import BackgroundColumn from "../components/BackgroundColumn.astro";
 import Box from "../components/Box.astro";
+import GridWrapper from "../components/GridWrapper.astro";
 import Loading from "../components/Loading.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
@@ -11,11 +12,23 @@ import "../styles/global.css";
     <h1>Portfolio</h1>
     <BackgroundColumn />
     <div class="wrapper">
-      <Box
-        title="Watabe Tomonari"
-        description="個人のプロジェクトを公開しています。"
-        isLink={false}
-      />
+      <GridWrapper
+        paddingPC={0}
+        columnPC={8}
+        gapPC={2.5}
+        paddingTab={0}
+        columnTab={8}
+        gapTab={2.5}
+        paddingSp={0}
+        columnSp={8}
+        gapSp={2.5}
+      >
+        <div class="title-wrapper">
+          <h2>Watabe Tomonari</h2>
+          <p>個人のプロジェクトを公開しています。</p>
+        </div>
+      </GridWrapper>
+
       <Box
         title="Color Value Drawing"
         description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
@@ -69,8 +82,26 @@ import "../styles/global.css";
     white-space: nowrap;
     border: 0;
   }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: var(--leading-trim);
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 40ch;
+    &:has(+ div) {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .title-wrapper {
+    grid-column: 2/5;
+  }
   .wrapper {
     display: grid;
-    gap: 3rem;
+    gap: 6rem;
+    padding: 4rem 0 6rem 0;
   }
 </style>

@@ -6,6 +6,7 @@
   --clamp-viewport-max: 767;
   --clamp-min: 14;
   --clamp-max: 16;
+  --leading-trim: calc((1em - 1lh) / 2);
 }
 
 @font-face {

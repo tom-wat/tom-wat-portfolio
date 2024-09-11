@@ -13,27 +13,27 @@ const {
 <GridWrapper
   paddingPC={0}
   columnPC={8}
-  gapPC={1}
+  gapPC={2.5}
   paddingTab={0}
   columnTab={8}
-  gapTab={1}
+  gapTab={2.5}
   paddingSp={0}
   columnSp={8}
-  gapSp={1}
+  gapSp={2.5}
 >
+<div class=`left`>
+  {imgSrc && <img src=`${imgSrc}.avif` alt="" />
+}
+</div>
+<div class=`right`>
+  <div class="title">{title}</div>
+  <div class="description">{description}</div>
+  {(hrefDetail || hrefExternal) && <div class="link-area">
+    {hrefDetail && <LinkButton href=`${hrefDetail}` text="詳細を見る" iconPath="/icons/arrow-right.svg"/>}
+    {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/icons/external-link.svg" target="_blank"/>}  
+  </div>}
+</div>
 
-  <div class=`left`>
-    <div class="title">{title}</div>
-    <div class="description">{description}</div>
-    {(hrefDetail || hrefExternal) && <div class="link-area">
-      {hrefDetail && <LinkButton href=`${hrefDetail}` text="詳細を見る" iconPath="/icons/arrow-right.svg"/>}
-      {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/icons/external-link.svg" target="_blank"/>}  
-    </div>}
-  </div>
-  <div class=`right`>
-    {imgSrc && <img src=`${imgSrc}.avif` alt="" />
-  }
-  </div>
 
 </GridWrapper>
 
@@ -41,6 +41,7 @@ const {
   .title {
     font-size: 2.5rem;
     font-weight: 600;
+    margin-top: var(--leading-trim);
     margin-bottom: 1rem;
   }
   .description {
@@ -51,14 +52,14 @@ const {
       margin-bottom: 2.5rem;
     }
   }
-  .left {
-    padding-block: 4rem;
-    grid-column: 2/5;
-  }
   .right {
+    padding-block-end: 4rem;
+    grid-column: 5/8;
+  }
+  .left {
     display: grid;
     padding-inline: 0;
-    grid-column: 5/8;
+    grid-column: 2/5;
     & img {
     border-radius: 1rem;
     width: 100%;
