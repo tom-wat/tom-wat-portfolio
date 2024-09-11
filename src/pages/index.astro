@@ -1,4 +1,5 @@
 ---
+import BackgroundColumn from "../components/BackgroundColumn.astro";
 import Box from "../components/Box.astro";
 import Loading from "../components/Loading.astro";
 import Layout from "../layouts/Layout.astro";
@@ -8,17 +9,16 @@ import "../styles/global.css";
 <Layout>
   <body>
     <h1>Portfolio</h1>
+    <BackgroundColumn />
     <div class="wrapper">
       <Box
         title="Watabe Tomonari"
         description="個人のプロジェクトを公開しています。"
-        className="one-blue"
         isLink={false}
       />
       <Box
         title="Color Value Drawing"
         description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
-        className="one-blue"
         imgSrc="/images/color-value-drawing"
         hrefDetail="/works/color-value-drawing"
         hrefExternal="https://color-value-drawing.vercel.app/"
@@ -26,7 +26,6 @@ import "../styles/global.css";
       <Box
         title="Length Drawing"
         description="画像の任意の2点間の距離をそのまま画像上に描画するWEBアプリケーション"
-        className="one-blue"
         imgSrc="/images/length-drawing"
         hrefDetail="/works/length-drawing"
         hrefExternal="https://length-drawing.vercel.app/"
@@ -34,7 +33,6 @@ import "../styles/global.css";
       <Box
         title="Sunshine Solutions"
         description="太陽を「光とエネルギーを提供する企業」として見立てたウェブサイト。"
-        className="one-blue"
         imgSrc="/images/sunshine-solutions"
         hrefDetail="/works/sunshine-solutions"
         hrefExternal="https://sunshine-solutions.vercel.app/"
@@ -42,7 +40,6 @@ import "../styles/global.css";
       <Box
         title="Momo"
         description="ミヒャエル・エンデの小説「モモ」を紹介するアンオフィシャルウェブサイト。"
-        className="one-blue"
         imgSrc="/images/momo"
         hrefDetail="/works/momo"
         hrefExternal="https://momo-sage.vercel.app/"
@@ -54,7 +51,8 @@ import "../styles/global.css";
 
 <style>
   body {
-    background-color: hsl(220, 100%, 39%);
+    background-color: var(--color-blue);
+    color: var(--color-white);
     opacity: 0;
     &.loaded {
       opacity: 1;

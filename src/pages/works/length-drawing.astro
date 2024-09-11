@@ -53,26 +53,27 @@ const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
     color: var(--color-white);
   }
   .title {
-    grid-column: 2/5;
+    grid-column: 2/-1;
     font-size: 2.5rem;
     font-weight: 600;
     margin-block: 2rem;
   }
   .main-image {
-    grid-column: 1/-1;
+    border-radius: 2rem;
+    grid-column: 2/8;
   }
   .headline {
     grid-column: 3/5;
     margin-block: 2rem;
   }
   .text {
-    grid-column: 4/8;
+    grid-column: 3/7;
     margin-block: 1rem;
     font-weight: 600;
   }
   .list {
     margin-block-end: 4rem;
-    grid-column: 4/8;
+    grid-column: 3/7;
     & li {
       font-weight: 600;
       margin-block-end: 1rem;

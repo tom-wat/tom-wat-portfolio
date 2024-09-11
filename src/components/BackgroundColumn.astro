@@ -1,0 +1,44 @@
+---
+
+---
+
+<div class="column-guide" role="presentation"></div>
+
+<style>
+  .column-guide {
+    --guide-color: hsl(45 100% 90% / 0.2);
+    --guide-width: 1px;
+
+    --grid-padding: 0rem;
+    --grid-column-count: 8;
+    --grid-gap: 1rem;
+
+    --grid-gutter-number: calc(var(--grid-column-count) - 1);
+    --grid-rest-width: calc(
+      var(--grid-padding) * 2 + var(--grid-gap) * var(--grid-gutter-number)
+    );
+    --grid-column-width: calc(
+      (100vw - var(--grid-rest-width)) / var(--grid-column-count)
+    );
+    --grid-background-size: calc(100vw - (var(--grid-padding) * 2));
+
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--guide-color) 0,
+      var(--guide-color) var(--guide-width),
+      transparent var(--guide-width),
+      transparent calc(var(--grid-column-width) - var(--guide-width)),
+      var(--guide-color) calc(var(--grid-column-width) - var(--guide-width)),
+      var(--guide-color) var(--grid-column-width),
+      transparent var(--grid-column-width),
+      transparent calc(var(--grid-column-width) + var(--grid-gap))
+    );
+    background-size: var(--grid-background-size) 100%;
+    background-position: var(--grid-padding) 0;
+    background-repeat: no-repeat;
+  }
+</style>

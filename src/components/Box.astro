@@ -4,7 +4,6 @@ import LinkButton from "./LinkButton.astro";
 const {
   title,
   description,
-  className,
   imgSrc,
   hrefDetail,
   hrefExternal,
@@ -23,7 +22,7 @@ const {
   gapSp={1}
 >
 
-  <div class=`${className} left`>
+  <div class=`left`>
     <div class="title">{title}</div>
     <div class="description">{description}</div>
     {(hrefDetail || hrefExternal) && <div class="link-area">
@@ -31,7 +30,7 @@ const {
       {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/icons/external-link.svg" target="_blank"/>}  
     </div>}
   </div>
-  <div class=`${className} right`>
+  <div class=`right`>
     {imgSrc && <img src=`${imgSrc}.avif` alt="" />
   }
   </div>
@@ -42,13 +41,14 @@ const {
   .title {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .description {
+    font-size: 0.8rem;
     font-weight: 600;
     width: 40ch;
     &:has(+ div){
-      margin-bottom: 4rem;
+      margin-bottom: 2.5rem;
     }
   }
   .left {
@@ -69,13 +69,5 @@ const {
     display: flex;
     gap: 1rem;
   }
-  .one-blue {
-    &.left {
-      color: var(--color-white);
-      background-color: var(--color-blue);
-    }
-    &.right {
-      background-color: var(--color-blue);
-    }
-  }
+
 </style>
