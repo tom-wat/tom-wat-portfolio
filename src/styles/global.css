@@ -67,6 +67,7 @@ body {
   font-family: "inter", sans-serif;
   letter-spacing: 0.03rem;
   line-height: 2;
+  text-wrap: balance;
 }
 img {
   max-width: 100%;

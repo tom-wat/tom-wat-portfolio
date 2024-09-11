@@ -17,9 +17,9 @@ const {
   paddingTab={0}
   columnTab={8}
   gapTab={2.5}
-  paddingSp={0}
-  columnSp={8}
-  gapSp={2.5}
+  paddingSp={1}
+  columnSp={1}
+  gapSp={0}
 >
 <div class=`left`>
   {imgSrc && <img src=`${imgSrc}.avif` alt="" />
@@ -33,43 +33,87 @@ const {
     {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/icons/external-link.svg" target="_blank"/>}  
   </div>}
 </div>
-
-
 </GridWrapper>
 
 <style>
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-block: var(--leading-trim);
-    margin-bottom: 1rem;
+    margin-block-end: 0.5rem;
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      margin-block-end: 1rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 2.5rem;
+      margin-block-end: 1rem;
+    }
   }
   .description {
     font-size: 0.8rem;
     font-weight: 600;
-    width: 40ch;
+    width: fit-content;
     margin-block: var(--leading-trim);
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 0.9rem;
+    }
     &:has(+ div){
-      margin-bottom: calc(2.5rem + var(--leading-trim));
+      margin-block-end: calc(2rem + var(--leading-trim));
+      @media (min-width: 768px) {
+        margin-block-end: calc(2.5rem + var(--leading-trim));
+      }
+      @media (min-width: 1025px) {
+      margin-block-end: calc(2.5rem + var(--leading-trim));
+    }
     }
   }
   .right {
-    padding-block-end: 4rem;
-    grid-column: 5/8;
+    padding-block-end: 0rem;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 2/8;
+      padding-block-end: 4rem;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/8;
+      padding-block-end: 4rem;
+    }
   }
   .left {
     display: grid;
     padding-inline: 0;
-    grid-column: 2/5;
+    grid-column: 1/-1;
+    margin-block-end: 1.5rem;
     & img {
     border-radius: 1rem;
     width: 100%;
     align-self: center;
+    }
+    @media (min-width: 768px) {
+      grid-column: 2/8;
+      margin-block-end: 0rem;
+
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/8;
+      margin-block-end: 0rem;
+    }
   }
-  }
+
   .link-area{
     display: flex;
+    flex-direction: column;
     gap: 1rem;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    @media (min-width: 1025px) {
+      flex-direction: row;
+    }
   }
 
 </style>

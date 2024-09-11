@@ -9,9 +9,9 @@
     --guide-color: hsl(45 100% 90% / 0.2);
     --guide-width: 1px;
 
-    --grid-padding: 0rem;
-    --grid-column-count: 8;
-    --grid-gap: 2.5rem;
+    --grid-padding: 1rem;
+    --grid-column-count: 1;
+    --grid-gap: 0rem;
 
     --grid-gutter-number: calc(var(--grid-column-count) - 1);
     --grid-rest-width: calc(
@@ -40,5 +40,17 @@
     background-size: var(--grid-background-size) 100%;
     background-position: var(--grid-padding) 0;
     background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      --grid-padding: 0rem;
+      --grid-column-count: 8;
+      --grid-gap: 2.5rem;
+    }
+
+    @media (min-width: 1025px) {
+      --grid-padding: 0rem;
+      --grid-column-count: 8;
+      --grid-gap: 2.5rem;
+    }
   }
 </style>

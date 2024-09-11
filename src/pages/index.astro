@@ -19,9 +19,9 @@ import "../styles/global.css";
         paddingTab={0}
         columnTab={8}
         gapTab={2.5}
-        paddingSp={0}
-        columnSp={8}
-        gapSp={2.5}
+        paddingSp={1}
+        columnSp={1}
+        gapSp={0}
       >
         <div class="title-wrapper">
           <h2>Watabe Tomonari</h2>
@@ -83,10 +83,16 @@ import "../styles/global.css";
     border: 0;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-block: var(--leading-trim);
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 2.5rem;
+    }
   }
   p {
     font-size: 0.8rem;
@@ -94,15 +100,35 @@ import "../styles/global.css";
     width: 40ch;
     margin-block: var(--leading-trim);
     &:has(+ div) {
-      margin-bottom: calc(2.5rem + var(--leading-trim));
+      margin-block-end: calc(2.5rem + var(--leading-trim));
+    }
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 0.9rem;
     }
   }
   .title-wrapper {
-    grid-column: 2/5;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 2/8;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/5;
+    }
   }
   .wrapper {
     display: grid;
-    gap: 6rem;
-    padding: 5.5rem 0 6rem 0;
+    gap: 2rem;
+    padding: 2.5rem 0 2.5rem 0;
+    @media (min-width: 768px) {
+      gap: 6rem;
+      padding: 5.5rem 0 6rem 0;
+    }
+    @media (min-width: 1025px) {
+      gap: 6rem;
+      padding: 5.5rem 0 6rem 0;
+    }
   }
 </style>
