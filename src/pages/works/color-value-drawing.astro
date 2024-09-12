@@ -8,41 +8,91 @@ import "../../styles/global.css";
 
 <Layout>
   <BackgroundColumn />
-  <GridWrapper
-    paddingPC={0}
-    columnPC={8}
-    gapPC={2.5}
-    paddingTab={0}
-    columnTab={8}
-    gapTab={2.5}
-    paddingSp={0}
-    columnSp={8}
-    gapSp={2.5}
-  >
-    <h1 class="title">Color Value Drawing</h1>
-    <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
-    <h2 class="headline">概要</h2>
-    <p class="text">
-      画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション
-    </p>
-    <h2 class="headline">課題と解決</h2>
-    <p class="text">
-      画像の配色を分析するときに、その色情報をメモすることがよくありました。その行為を簡単にしたいと思い作ったアプリケーションです。既存のアプリケーションでも色情報を取得し保存することはできましたが、それを対象と紐づけて記録しておくのは一手間かかりました。その行為を省略することで、メモにかかる時間を短縮することができました。
-      色にはさまざまな色空間があり、さまざまな表記があります。自分がメモしたい色空間の組み合わせを、自由に作れるようになったことも、自分にとっては嬉しいポイントです。
-    </p>
-    <h2 class="headline">機能、特徴</h2>
-    <ul class="list">
-      <li>多様な色空間の色情報の取得と描画</li>
-      <li>色情報ツールチップ</li>
-      <li>取り消し、やり直し</li>
-      <li>ズーム、リセット</li>
-      <li>コピー</li>
-      <li>フォントサイズの変更</li>
-      <li>キーボードショートカット</li>
-      <li>「読み込んだ画像に色情報を描画した画像」のダウンロード機能</li>
-      <li>「描画した色情報だけの画像」ダウンロード機能</li>
-    </ul>
-  </GridWrapper>
+  <div class="wrapper">
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={0}
+      columnSp={8}
+      gapSp={2.5}
+    >
+      <h1 class="title">Color Value Drawing</h1>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={0}
+      columnSp={8}
+      gapSp={2.5}
+    >
+      <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={0}
+      columnSp={8}
+      gapSp={2.5}
+    >
+      <h2 class="headline">概要</h2>
+      <p class="text">
+        画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={0}
+      columnSp={8}
+      gapSp={2.5}
+    >
+      <h2 class="headline">課題と解決</h2>
+      <p class="text">
+        画像の配色を分析するときに、その色情報をメモすることがよくありました。その行為を簡単にしたいと思い作ったアプリケーションです。既存のアプリケーションでも色情報を取得し保存することはできましたが、それを対象と紐づけて記録しておくのは一手間かかりました。その行為を省略することで、メモにかかる時間を短縮することができました。
+        色にはさまざまな色空間があり、さまざまな表記があります。自分がメモしたい色空間の組み合わせを、自由に作れるようになったことも、自分にとっては嬉しいポイントです。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={0}
+      columnSp={8}
+      gapSp={2.5}
+    >
+      <h2 class="headline">機能、特徴</h2>
+      <ul class="list">
+        <li>多様な色空間の色情報の取得と描画</li>
+        <li>色情報ツールチップ</li>
+        <li>取り消し、やり直し</li>
+        <li>ズーム、リセット</li>
+        <li>コピー</li>
+        <li>フォントサイズの変更</li>
+        <li>キーボードショートカット</li>
+        <li>「読み込んだ画像に色情報を描画した画像」のダウンロード機能</li>
+        <li>「描画した色情報だけの画像」ダウンロード機能</li>
+      </ul>
+    </GridWrapper>
+  </div>
 </Layout>
 
 <style>
@@ -50,11 +100,16 @@ import "../../styles/global.css";
     background-color: var(--color-blue);
     color: var(--color-white);
   }
+  .wrapper {
+    display: grid;
+    gap: 2.5rem;
+    padding-block: 2.5rem;
+  }
   .title {
     grid-column: 2/-1;
     font-size: 2.5rem;
     font-weight: 600;
-    margin-block: 2rem;
+    margin-block: var(--leading-trim);
   }
   .main-image {
     border-radius: 2rem;
@@ -62,19 +117,35 @@ import "../../styles/global.css";
   }
   .headline {
     grid-column: 3/5;
-    margin-block: 2rem;
+    margin-block: var(--leading-trim);
   }
   .text {
     grid-column: 3/7;
-    margin-block: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
+    margin-block: var(--leading-trim);
+    &:has(+ div) {
+      margin-block-end: calc(2.5rem + var(--leading-trim));
+    }
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 1025px) {
+      font-size: 0.9rem;
+    }
   }
   .list {
-    margin-block-end: 4rem;
+    margin-block: var(--leading-trim);
     grid-column: 3/7;
     & li {
       font-weight: 600;
-      margin-block-end: 1rem;
+      font-size: 0.8rem;
+      @media (min-width: 768px) {
+        font-size: 0.9rem;
+      }
+      @media (min-width: 1025px) {
+        font-size: 0.9rem;
+      }
     }
   }
 </style>
