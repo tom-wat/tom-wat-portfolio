@@ -12,7 +12,7 @@ import "../styles/global.css";
   description="個人のポートフォリオサイトです。"
 >
   <body>
-    <h1>Portfolio</h1>
+    <h1>渡部智成のポートフォリオサイト</h1>
     <BackgroundColumn />
     <div class="wrapper">
       <GridWrapper
@@ -26,23 +26,25 @@ import "../styles/global.css";
         columnSp={1}
         gapSp={0}
       >
-        <div class="title-wrapper">
+        <header class="title-wrapper">
           <h2>Watabe Tomonari</h2>
           <p>個人のプロジェクトを公開しています。</p>
-        </div>
+        </header>
       </GridWrapper>
 
       <Box
         title="Color Value Drawing"
-        description="画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション"
+        description="画像の色情報を視覚的に分析・記録するためのWebアプリケーション"
         imgSrc="/images/color-value-drawing"
+        imgAlt="Color Value Draewingのトップページの画像"
         hrefDetail="/works/color-value-drawing"
         hrefExternal="https://color-value-drawing.vercel.app/"
       />
       <Box
         title="Length Drawing"
-        description="画像の任意の2点間の距離をそのまま画像上に描画するWEBアプリケーション"
+        description="画像内の長さを比較・分析・記録するためのWebアプリケーション"
         imgSrc="/images/length-drawing"
+        imgAlt="Length Draewingのトップページの画像"
         hrefDetail="/works/length-drawing"
         hrefExternal="https://length-drawing.vercel.app/"
       />
@@ -50,6 +52,7 @@ import "../styles/global.css";
         title="Sunshine Solutions"
         description="太陽を「光とエネルギーを提供する企業」として見立てたウェブサイト。"
         imgSrc="/images/sunshine-solutions"
+        imgAlt="サンシャインソリューションズのトップページの画像、太陽が輝く雄大な景色"
         hrefDetail="/works/sunshine-solutions"
         hrefExternal="https://sunshine-solutions.vercel.app/"
       />
@@ -57,6 +60,7 @@ import "../styles/global.css";
         title="Momo"
         description="ミヒャエル・エンデの小説「モモ」を紹介するアンオフィシャルウェブサイト。"
         imgSrc="/images/momo"
+        imgAlt="モモのトップページの画像、時計の絵と真ん中に主人公の少女モモの横顔のシルエットが描かれている"
         hrefDetail="/works/momo"
         hrefExternal="https://momo-sage.vercel.app/"
       />
@@ -90,16 +94,16 @@ import "../styles/global.css";
     font-size: 2rem;
     font-weight: 700;
     margin-block: var(--leading-trim);
-    margin-block-end: 0.5rem;
+    margin-block-end: calc(0.5rem + var(--leading-trim));
     @media (min-width: 768px) {
       --leading-trim: calc((1em - 1lh) / 2 - 5px);
       font-size: 2.5rem;
-      margin-block-end: 1rem;
+      margin-block-end: calc(1.5rem + var(--leading-trim));
     }
     @media (min-width: 1025px) {
       --leading-trim: calc((1em - 1lh) / 2 - 5px);
       font-size: 2.5rem;
-      margin-block-end: 1rem;
+      margin-block-end: calc(1.5rem + var(--leading-trim));
     }
   }
   p {
