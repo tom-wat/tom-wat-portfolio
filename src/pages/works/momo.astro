@@ -7,8 +7,8 @@ import "../../styles/global.css";
 ---
 
 <Layout
-  title="Color Value Drawing - Watabe Tomonari's portfolio"
-  description="Color Value DrawingというWEBアプリの詳細"
+  title="Momo - Watabe Tomonari's portfolio"
+  description="MomoというWEBアプリの詳細"
 >
   <BackgroundColumn />
   <div class="wrapper">
@@ -23,7 +23,7 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
       ><header>
-        <h1 class="title">Color Value Drawing</h1>
+        <h1 class="title">Momo</h1>
       </header>
     </GridWrapper>
     <GridWrapper
@@ -37,7 +37,7 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
+      <img class="main-image" src="/images/momo.avif" alt="" />
     </GridWrapper>
     <GridWrapper
       paddingPC={0}
@@ -52,7 +52,7 @@ import "../../styles/global.css";
     >
       <h2 class="headline">概要</h2>
       <p class="text">
-        このWebアプリケーションは、画像内の色情報を効率的に分析、記録するためのツールです。色情報を画像に描画することで、色とオブジェクトの関連を記録することができます。
+        ミヒャエル・エンデの小説「モモ」を紹介するウェブサイト。
       </p>
     </GridWrapper>
     <GridWrapper
@@ -66,73 +66,62 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <h2 class="headline">使用方法</h2>
-      <ul class="list">
-        <li>(1)Readボタンから画像を読み込む</li>
-        <li>(2)画像内の任意の点をクリックして色情報を取得</li>
-        <li>(3)取得した色情報を画像上の任意の位置に描画</li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">特徴</h2>
-      <ul class="list">
-        <li>多様な色空間に対応 (RGB, HEX, HSV, HSL, Lab, LCH, OKLab, OKLCH)</li>
-        <li>線の透明度、幅、色の調整</li>
-        <li>45度刻みの角度固定機能（Angle Constraint）</li>
-        <li>フォントサイズやカラム数の調整</li>
-        <li>
-          Undo/Redo機能で作業を効率的に管理(キーボードショートカットあり。ZがUndo,XがRedo)
-        </li>
-        <li>
-          色情報レイヤーの単独ダウンロードが可能（colors-only。読み込んだ画像とは別にダウンロード可能）
-        </li>
-        <li>
-          メニュー設定の保存（LocalStorageに保存。リロードや再度訪れた時に保存した設定が戻る）
-        </li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">主な利用者</h2>
-      <ul class="list">
-        <li>デザインドキュメントで色情報を記録する必要がある人、</li>
-        <li>絵を描く際に色を分析したいイラストレーター、</li>
-        <li>に便利なツールです。</li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">制作の経緯</h2>
+      <h2 class="headline">目的</h2>
       <p class="text">
-        画像の配色を分析するときに、その色情報をメモすることがよくありました。その行為を簡単にしたいと思い作ったアプリケーションです。既存のアプリケーションでも色情報を取得し保存することはできましたが、それを対象と紐づけて記録しておくのは一手間かかりました。その行為を省略することで、メモにかかる時間を短縮することができ、作業も楽しくなりました。
+        「モモ」に興味を持ってもらう。「モモ」を読んでみたいと思ってもらえるようなものにすること。この小説の面白さを少しでも共有できたらと思い作成しました。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">意匠の方向</h2>
+      <p class="text">
+        本が持っている手触りを画面上に再現しました。これがなんのサイトなのかを、はっきりわかりやすくすることが狙いです。最初の画面に本のカバー、あとは紙の質感を出し、そこに物語に出てくるモチーフをさまざまなかたちで配置しました。
+        物語の舞台として古代の円形劇場跡地があるので、石や柱を並べ、「時間」という大きなテーマがあるので砂時計、時計を配置しました。また「時間の花」という重要なものが物語に出てくるので、装飾に花や葉を多く配置しました。中央には主人公モモの横顔のシルエット。時計と横顔から星空が見えるようにしました。これは物語の中盤「時間の国」という場所でモモが体験する神秘的な出来事の描写から思いついたものです。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">技術</h2>
+      <ul class="list">
+        <li>Astro.js</li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">工夫</h2>
+      <p class="text">
+        なるべく容量を削減する工夫をしました。特に日本語フォントが容量の大半を占めるので、
+        <a
+          href="https://github.com/ixkaito/NotoSansJP-subset?tab=readme-ov-file"
+          >こちらのNotoSansJPサブセットのGithub</a
+        >を参考にさせていただき、フォントに収録されている文字数を減らして容量を半分以下に抑えました。
       </p>
     </GridWrapper>
     <GridWrapper
@@ -153,7 +142,7 @@ import "../../styles/global.css";
           iconPath="/icons/arrow-left.svg"
         />
         <LinkButton
-          href="https://color-value-drawing.vercel.app/"
+          href="https://momo-sage.vercel.app/"
           text="サイトへ移動する"
           iconPath="/icons/external-link.svg"
           target="_blank"

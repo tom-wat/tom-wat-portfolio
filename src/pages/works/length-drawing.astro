@@ -1,50 +1,171 @@
 ---
+import BackgroundColumn from "../../components/BackgroundColumn.astro";
 import GridWrapper from "../../components/GridWrapper.astro";
 import LinkButton from "../../components/LinkButton.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
-
-const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
-  Astro.props;
 ---
 
-<Layout>
-  <GridWrapper
-    paddingPC={0}
-    columnPC={8}
-    gapPC={1}
-    paddingTab={0}
-    columnTab={8}
-    gapTab={1}
-    paddingSp={0}
-    columnSp={8}
-    gapSp={1}
-  >
-    <h1 class="title">Length Drawing</h1>
-    <img class="main-image" src="/images/length-drawing.avif" alt="" />
-    <h2 class="headline">概要</h2>
-    <p class="text">
-      画像の任意の2点間の距離をそのまま画像上に描画するアプリケーション
-    </p>
-    <h2 class="headline">課題と解決</h2>
-    <p class="text">
-      絵を描く時の下調べとして、かたちの長さを測り記録しておくことがよくありました。それを簡略化するためのアプリケーションです。簡単に長さを記録しておくことができるようになり、下調べの時間を大幅に短縮することができました。また数値の比率を変更する機能を加えることで、物の長さの基準を変更して、それぞれの比率をわかりやすい数値に切り替えられるようにすることも、自分にとって必要な機能でした。
-    </p>
-    <h2 class="headline">機能、特徴</h2>
-    <ul class="list">
-      <li>距離の描画</li>
-      <li>角度の描画</li>
-      <li>角度固定</li>
-      <li>比率変更</li>
-      <li>取り消し、やり直し</li>
-      <li>ズーム、リセット</li>
-      <li>コピー</li>
-      <li>フォントサイズの変更</li>
-      <li>キーボードショートカット</li>
-      <li>「読み込んだ画像に距離を描画した画像」のダウンロード機能</li>
-      <li>「描画した距離だけの画像」ダウンロード機能</li>
-    </ul>
-  </GridWrapper>
+<Layout
+  title="Length Drawing - Watabe Tomonari's portfolio"
+  description="Length DrawingというWEBアプリの詳細"
+>
+  <BackgroundColumn />
+  <div class="wrapper">
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+      ><header>
+        <h1 class="title">Length Drawing</h1>
+      </header>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <img class="main-image" src="/images/length-drawing.avif" alt="" />
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">概要</h2>
+      <p class="text">
+        画像内の長さを比較・分析・記録するためのWebアプリケーションです。長さを画像に描画することで、オブジェクトとそれぞれの要素との比率、バランスを記録することができます。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">使用方法</h2>
+      <ul class="list">
+        <li>(1)Readボタンから画像を読み込む。</li>
+        <li>(2)画像内の任意の点をクリックして測りたい長さの始点を決定。</li>
+        <li>
+          (3)画像内の任意の点をクリックして測りたい長さの終点を決定。2点間の距離のピクセル数が描画される。
+        </li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">特徴</h2>
+      <ul class="list">
+        <li>
+          長さの縮尺を変更可能（Ratio numerator、 Ratio
+          denominator。好きな長さを1とすることができる）
+        </li>
+        <li>線の透明度、幅、色の調整</li>
+        <li>45度刻みの角度固定機能（Angle Constraint）</li>
+        <li>フォントサイズやカラム数の調整</li>
+        <li>
+          Undo/Redo機能で作業を効率的に管理(キーボードショートカットあり。ZがUndo,XがRedo)
+        </li>
+        <li>
+          長さレイヤーの単独ダウンロードが可能（colors-only。読み込んだ画像とは別にダウンロード可能）
+        </li>
+        <li>
+          メニュー設定の保存（LocalStorageに保存。リロードや再度訪れた時に保存した設定が戻る）
+        </li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">主な利用者</h2>
+      <ul class="list">
+        <li>オブジェクトのバランスのいい比率を記録しておきたい人</li>
+        <li>要素の比率を分析したいイラストレーター、画家</li>
+        <li>に便利なツールです。</li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">制作の経緯</h2>
+      <p class="text">
+        絵を描く時の下調べとして、かたちの長さを測り記録しておくことがよくありました。それを簡略化するためのアプリケーションです。簡単に長さを記録しておくことができるようになり、下調べの時間を大幅に短縮することができました。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <div class="link-area">
+        <LinkButton
+          href="https://tom-wat-portfolio.vercel.app/"
+          text="ホームへ戻る"
+          iconPath="/icons/arrow-left.svg"
+        />
+        <LinkButton
+          href="https://length-drawing.vercel.app/"
+          text="サイトへ移動する"
+          iconPath="/icons/external-link.svg"
+          target="_blank"
+        />
+      </div>
+    </GridWrapper>
+  </div>
 </Layout>
 
 <style>
@@ -52,40 +173,113 @@ const { title, description, className, imgSrc, hrefDetail, hrefExternal } =
     background-color: var(--color-blue);
     color: var(--color-white);
   }
+  .wrapper {
+    display: grid;
+    gap: 2.5rem;
+    padding-block: 2.5rem;
+    @media (min-width: 768px) {
+      gap: 2.5rem;
+      padding-block: 2.5rem;
+    }
+    @media (min-width: 1025px) {
+      gap: 2.5rem;
+      padding-block: 2.5rem;
+    }
+  }
+  header {
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 2/-1;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/-1;
+    }
+  }
   .title {
-    grid-column: 2/-1;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-block: 2rem;
+    grid-column: 1/-1;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-block: var(--leading-trim);
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      grid-column: 2/-1;
+    }
+    @media (min-width: 1025px) {
+      font-size: 2.5rem;
+      grid-column: 2/-1;
+    }
   }
   .main-image {
-    border-radius: 2rem;
-    grid-column: 2/8;
+    border-radius: 1rem;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 2/8;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/8;
+    }
   }
   .headline {
-    grid-column: 3/5;
-    margin-block: 2rem;
+    color: var(--color-yellow);
+    font-size: 1.25rem;
+    grid-column: 1/-1;
+    margin-block: var(--leading-trim);
+    margin-block-end: calc(2rem + var(--leading-trim));
+    @media (min-width: 768px) {
+      grid-column: 3/5;
+      margin-block-end: calc(0rem + var(--leading-trim));
+    }
+    @media (min-width: 1025px) {
+      grid-column: 3/5;
+      margin-block-end: calc(0rem + var(--leading-trim));
+    }
   }
   .text {
-    grid-column: 3/7;
-    margin-block: 1rem;
+    grid-column: 1/-1;
+    font-size: 0.8rem;
     font-weight: 600;
+    margin-block: var(--leading-trim);
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+      grid-column: 3/7;
+    }
+    @media (min-width: 1025px) {
+      font-size: 0.9rem;
+      grid-column: 3/7;
+    }
   }
   .list {
-    margin-block-end: 4rem;
-    grid-column: 3/7;
+    margin-block: var(--leading-trim);
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 3/7;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 3/7;
+    }
     & li {
       font-weight: 600;
-      margin-block-end: 1rem;
+      font-size: 0.8rem;
+      @media (min-width: 768px) {
+        font-size: 0.9rem;
+      }
+      @media (min-width: 1025px) {
+        font-size: 0.9rem;
+      }
     }
   }
-  .one-blue {
-    &.left {
-      color: var(--color-white);
-      background-color: var(--color-blue);
+  .link-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      grid-column: 3/-1;
     }
-    &.right {
-      background-color: var(--color-blue);
+    @media (min-width: 1025px) {
+      flex-direction: row;
+      grid-column: 3/-1;
     }
   }
 </style>

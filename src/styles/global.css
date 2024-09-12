@@ -79,3 +79,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
+a {
+  color: var(--color-yellow);
+}

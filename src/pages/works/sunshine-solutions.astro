@@ -7,8 +7,8 @@ import "../../styles/global.css";
 ---
 
 <Layout
-  title="Color Value Drawing - Watabe Tomonari's portfolio"
-  description="Color Value DrawingというWEBアプリの詳細"
+  title="Sunshine Solutions - Watabe Tomonari's portfolio"
+  description="Sunshine SolutionsというWebサイトの詳細"
 >
   <BackgroundColumn />
   <div class="wrapper">
@@ -23,7 +23,7 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
       ><header>
-        <h1 class="title">Color Value Drawing</h1>
+        <h1 class="title">Sunshine Solutions</h1>
       </header>
     </GridWrapper>
     <GridWrapper
@@ -37,7 +37,7 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
+      <img class="main-image" src="/images/sunshine-solutions.avif" alt="" />
     </GridWrapper>
     <GridWrapper
       paddingPC={0}
@@ -52,7 +52,7 @@ import "../../styles/global.css";
     >
       <h2 class="headline">概要</h2>
       <p class="text">
-        このWebアプリケーションは、画像内の色情報を効率的に分析、記録するためのツールです。色情報を画像に描画することで、色とオブジェクトの関連を記録することができます。
+        太陽を「光とエネルギーを提供する企業」として見立てたウェブサイト。
       </p>
     </GridWrapper>
     <GridWrapper
@@ -66,73 +66,58 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <h2 class="headline">使用方法</h2>
-      <ul class="list">
-        <li>(1)Readボタンから画像を読み込む</li>
-        <li>(2)画像内の任意の点をクリックして色情報を取得</li>
-        <li>(3)取得した色情報を画像上の任意の位置に描画</li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">特徴</h2>
-      <ul class="list">
-        <li>多様な色空間に対応 (RGB, HEX, HSV, HSL, Lab, LCH, OKLab, OKLCH)</li>
-        <li>線の透明度、幅、色の調整</li>
-        <li>45度刻みの角度固定機能（Angle Constraint）</li>
-        <li>フォントサイズやカラム数の調整</li>
-        <li>
-          Undo/Redo機能で作業を効率的に管理(キーボードショートカットあり。ZがUndo,XがRedo)
-        </li>
-        <li>
-          色情報レイヤーの単独ダウンロードが可能（colors-only。読み込んだ画像とは別にダウンロード可能）
-        </li>
-        <li>
-          メニュー設定の保存（LocalStorageに保存。リロードや再度訪れた時に保存した設定が戻る）
-        </li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">主な利用者</h2>
-      <ul class="list">
-        <li>デザインドキュメントで色情報を記録する必要がある人、</li>
-        <li>絵を描く際に色を分析したいイラストレーター、</li>
-        <li>に便利なツールです。</li>
-      </ul>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">制作の経緯</h2>
+      <h2 class="headline">目的</h2>
       <p class="text">
-        画像の配色を分析するときに、その色情報をメモすることがよくありました。その行為を簡単にしたいと思い作ったアプリケーションです。既存のアプリケーションでも色情報を取得し保存することはできましたが、それを対象と紐づけて記録しておくのは一手間かかりました。その行為を省略することで、メモにかかる時間を短縮することができ、作業も楽しくなりました。
+        普段、当たり前にあるものを再発見することができないかと思い立ち、作成したウェブサイト。太陽について改めて理解を深めることができるようなサイトを目指しました。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">意匠の方向</h2>
+      <p class="text">
+        太陽のあたたかい光を感じられるような色合いを目指しました。また、見る人が、普段の生活で自然の風景に注目してもらえるように、太陽がみえる美しい風景の写真を多く使用しました。
+      </p>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">技術</h2>
+      <ul class="list">
+        <li>Astro</li>
+        <li>Canvas(+ p5.js)</li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">工夫</h2>
+      <p class="text">
+        画像やフォントを多く使っているので、少しでも容量を減らせるように工夫しました。画像はavifフォーマット。フォントはwoff2フォーマット。さらに少ししか使用していないフォントで容量の重いものはサブセット化しました（Claude3.5に書いてもらったpythonファイルを使用）。
       </p>
     </GridWrapper>
     <GridWrapper
@@ -153,7 +138,7 @@ import "../../styles/global.css";
           iconPath="/icons/arrow-left.svg"
         />
         <LinkButton
-          href="https://color-value-drawing.vercel.app/"
+          href="https://sunshine-solutions.vercel.app/"
           text="サイトへ移動する"
           iconPath="/icons/external-link.svg"
           target="_blank"
