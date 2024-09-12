@@ -1,7 +1,7 @@
 :root {
   --color-white: hsl(250, 0%, 90%);
   --color-black: hsl(240, 15%, 10%);
-  --color-blue: hsl(240, 100%, 40%);
+  --color-blue: hsl(230, 100%, 40%);
   --clamp-viewport-min: 320;
   --clamp-viewport-max: 767;
   --clamp-min: 14;
