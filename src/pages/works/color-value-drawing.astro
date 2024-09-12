@@ -16,9 +16,9 @@ import "../../styles/global.css";
       paddingTab={0}
       columnTab={8}
       gapTab={2.5}
-      paddingSp={0}
-      columnSp={8}
-      gapSp={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
     >
       <h1 class="title">Color Value Drawing</h1>
     </GridWrapper>
@@ -29,9 +29,9 @@ import "../../styles/global.css";
       paddingTab={0}
       columnTab={8}
       gapTab={2.5}
-      paddingSp={0}
-      columnSp={8}
-      gapSp={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
     >
       <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
     </GridWrapper>
@@ -42,9 +42,9 @@ import "../../styles/global.css";
       paddingTab={0}
       columnTab={8}
       gapTab={2.5}
-      paddingSp={0}
-      columnSp={8}
-      gapSp={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
     >
       <h2 class="headline">概要</h2>
       <p class="text">
@@ -58,9 +58,9 @@ import "../../styles/global.css";
       paddingTab={0}
       columnTab={8}
       gapTab={2.5}
-      paddingSp={0}
-      columnSp={8}
-      gapSp={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
     >
       <h2 class="headline">課題と解決</h2>
       <p class="text">
@@ -75,9 +75,9 @@ import "../../styles/global.css";
       paddingTab={0}
       columnTab={8}
       gapTab={2.5}
-      paddingSp={0}
-      columnSp={8}
-      gapSp={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
     >
       <h2 class="headline">機能、特徴</h2>
       <ul class="list">
@@ -104,39 +104,74 @@ import "../../styles/global.css";
     display: grid;
     gap: 2.5rem;
     padding-block: 2.5rem;
+    @media (min-width: 768px) {
+      gap: 2.5rem;
+      padding-block: 2.5rem;
+    }
+    @media (min-width: 1025px) {
+      gap: 2.5rem;
+      padding-block: 2.5rem;
+    }
   }
   .title {
-    grid-column: 2/-1;
-    font-size: 2.5rem;
+    grid-column: 1/-1;
+    font-size: 1.75rem;
     font-weight: 700;
     margin-block: var(--leading-trim);
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      grid-column: 2/-1;
+    }
+    @media (min-width: 1025px) {
+      font-size: 2.5rem;
+      grid-column: 2/-1;
+    }
   }
   .main-image {
-    border-radius: 2rem;
-    grid-column: 2/8;
+    border-radius: 1rem;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 2/8;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 2/8;
+    }
   }
   .headline {
-    grid-column: 3/5;
+    font-size: 1.25rem;
+    grid-column: 1/-1;
     margin-block: var(--leading-trim);
+    margin-block-end: calc(2.5rem + var(--leading-trim));
+    @media (min-width: 768px) {
+      grid-column: 3/5;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 3/5;
+    }
   }
   .text {
-    grid-column: 3/7;
+    grid-column: 1/-1;
     font-size: 0.8rem;
     font-weight: 600;
     margin-block: var(--leading-trim);
-    &:has(+ div) {
-      margin-block-end: calc(2.5rem + var(--leading-trim));
-    }
     @media (min-width: 768px) {
       font-size: 0.9rem;
+      grid-column: 3/7;
     }
     @media (min-width: 1025px) {
       font-size: 0.9rem;
+      grid-column: 3/7;
     }
   }
   .list {
     margin-block: var(--leading-trim);
-    grid-column: 3/7;
+    grid-column: 1/-1;
+    @media (min-width: 768px) {
+      grid-column: 3/7;
+    }
+    @media (min-width: 1025px) {
+      grid-column: 3/7;
+    }
     & li {
       font-weight: 600;
       font-size: 0.8rem;
