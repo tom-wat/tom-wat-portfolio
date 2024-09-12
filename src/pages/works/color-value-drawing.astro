@@ -37,7 +37,27 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <img class="main-image" src="/images/color-value-drawing.avif" alt="" />
+      <picture class="main-image">
+        <source
+          media="(min-width: 768px)"
+          srcset="/images/color-value-drawing-detail.avif"
+          sizes="100vw"
+          type="image/avif"
+        />
+        <source
+          media="(max-width: 767px)"
+          srcset="/images/color-value-drawing-detail-sp.avif"
+          type="image/avif"
+          width="1082"
+          height="2402"
+        />
+        <img
+          src="/images/color-value-drawing-detail.jpg"
+          alt="フェルメールの牛乳を注ぐ女の画像にアプリで色情報を描画している"
+          width="2880"
+          height="1800"
+        />
+      </picture>
     </GridWrapper>
     <GridWrapper
       paddingPC={0}
@@ -207,13 +227,17 @@ import "../../styles/global.css";
     }
   }
   .main-image {
-    border-radius: 1rem;
     grid-column: 1/-1;
     @media (min-width: 768px) {
       grid-column: 2/8;
     }
     @media (min-width: 1025px) {
       grid-column: 2/8;
+    }
+    & img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
     }
   }
   .headline {
