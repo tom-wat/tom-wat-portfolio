@@ -2,6 +2,7 @@
   --color-white: hsl(250, 0%, 90%);
   --color-black: hsl(240, 15%, 10%);
   --color-blue: hsl(220, 100%, 39%);
+  --color-yellow: hsl(45, 100%, 50%);
   --clamp-viewport-min: 320;
   --clamp-viewport-max: 767;
   --clamp-min: 14;

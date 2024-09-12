@@ -25,13 +25,13 @@ const { href, iconPath, text, target = "_self" } = Astro.props;
       color 0.1s,
       background-color 0.1s;
     &:focus-visible {
-      background-color: hsl(45, 100%, 50%);
+      background-color: var(--color-yellow);
       outline: 2px solid var(--color-white);
       outline-offset: 4px;
     }
     @media (any-hover: hover) {
       &:hover {
-        background-color: hsl(45, 100%, 50%);
+        background-color: var(--color-yellow);
       }
     }
     @media (min-width: 768px) {

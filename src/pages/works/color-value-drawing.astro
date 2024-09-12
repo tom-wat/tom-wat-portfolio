@@ -6,7 +6,10 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 ---
 
-<Layout>
+<Layout
+  title="Color Value Drawing - Watabe Tomonari's portfolio"
+  description="Color Value DrawingというWEBアプリの詳細"
+>
   <BackgroundColumn />
   <div class="wrapper">
     <GridWrapper
@@ -49,7 +52,7 @@ import "../../styles/global.css";
     >
       <h2 class="headline">概要</h2>
       <p class="text">
-        画像の任意の点の色情報をそのまま画像上に描画するWEBアプリケーション
+        このWebアプリケーションは、画像内の色情報を効率的に分析、記録するためのツールです。色情報を画像に描画することで、色とオブジェクトの関連を記録することができます。
       </p>
     </GridWrapper>
     <GridWrapper
@@ -63,35 +66,75 @@ import "../../styles/global.css";
       columnSp={1}
       gapSp={0}
     >
-      <h2 class="headline">課題と解決</h2>
+      <h2 class="headline">使用方法</h2>
+      <ul class="list">
+        <li>(1)Readボタンから画像を読み込む</li>
+        <li>(2)画像内の任意の点をクリックして色情報を取得</li>
+        <li>(3)取得した色情報を画像上の任意の位置に描画</li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">特徴</h2>
+      <ul class="list">
+        <li>多様な色空間に対応 (RGB, HEX, HSV, HSL, Lab, LCH, OKLab, OKLCH)</li>
+        <li>線の透明度、幅、色の調整</li>
+        <li>45度刻みの角度固定機能（Angle Constraint）</li>
+        <li>フォントサイズやカラム数の調整</li>
+        <li>
+          Undo/Redo機能で作業を効率的に管理(キーボードショートカットあり。ZがUndo,XがRedo)
+        </li>
+        <li>
+          色情報レイヤーの単独ダウンロードが可能（colors-only。読み込んだ画像とは別にダウンロード可能）
+        </li>
+        <li>
+          メニュー設定の保存（LocalStorageに保存。リロードや再度訪れた時に保存した設定が戻る）
+        </li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">主な利用者</h2>
+      <ul class="list">
+        <li>デザインドキュメントで色情報を記録する必要がある人、</li>
+        <li>絵を描く際に色を分析したいイラストレーター、</li>
+        <li>に便利なツールです。</li>
+      </ul>
+    </GridWrapper>
+    <GridWrapper
+      paddingPC={0}
+      columnPC={8}
+      gapPC={2.5}
+      paddingTab={0}
+      columnTab={8}
+      gapTab={2.5}
+      paddingSp={1}
+      columnSp={1}
+      gapSp={0}
+    >
+      <h2 class="headline">制作の経緯</h2>
       <p class="text">
         画像の配色を分析するときに、その色情報をメモすることがよくありました。その行為を簡単にしたいと思い作ったアプリケーションです。既存のアプリケーションでも色情報を取得し保存することはできましたが、それを対象と紐づけて記録しておくのは一手間かかりました。その行為を省略することで、メモにかかる時間を短縮することができました。
-        色にはさまざまな色空間があり、さまざまな表記があります。自分がメモしたい色空間の組み合わせを、自由に作れるようになったことも、自分にとっては嬉しいポイントです。
+        また自分がメモしたい色空間の組み合わせを自由に作れるようになったことも嬉しかったです。
       </p>
-    </GridWrapper>
-    <GridWrapper
-      paddingPC={0}
-      columnPC={8}
-      gapPC={2.5}
-      paddingTab={0}
-      columnTab={8}
-      gapTab={2.5}
-      paddingSp={1}
-      columnSp={1}
-      gapSp={0}
-    >
-      <h2 class="headline">機能、特徴</h2>
-      <ul class="list">
-        <li>多様な色空間の色情報の取得と描画</li>
-        <li>色情報ツールチップ</li>
-        <li>取り消し、やり直し</li>
-        <li>ズーム、リセット</li>
-        <li>コピー</li>
-        <li>フォントサイズの変更</li>
-        <li>キーボードショートカット</li>
-        <li>「読み込んだ画像に色情報を描画した画像」のダウンロード機能</li>
-        <li>「描画した色情報だけの画像」ダウンロード機能</li>
-      </ul>
     </GridWrapper>
     <GridWrapper
       paddingPC={0}
@@ -119,119 +162,120 @@ import "../../styles/global.css";
       </div>
     </GridWrapper>
   </div>
-</Layout>
 
-<style>
-  body {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-  }
-  .wrapper {
-    display: grid;
-    gap: 2.5rem;
-    padding-block: 2.5rem;
-    @media (min-width: 768px) {
+  <style>
+    body {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+    .wrapper {
+      display: grid;
       gap: 2.5rem;
       padding-block: 2.5rem;
+      @media (min-width: 768px) {
+        gap: 2.5rem;
+        padding-block: 2.5rem;
+      }
+      @media (min-width: 1025px) {
+        gap: 2.5rem;
+        padding-block: 2.5rem;
+      }
     }
-    @media (min-width: 1025px) {
-      gap: 2.5rem;
-      padding-block: 2.5rem;
+    header {
+      grid-column: 1/-1;
+      @media (min-width: 768px) {
+        grid-column: 2/-1;
+      }
+      @media (min-width: 1025px) {
+        grid-column: 2/-1;
+      }
     }
-  }
-  header {
-    grid-column: 1/-1;
-    @media (min-width: 768px) {
-      grid-column: 2/-1;
+    .title {
+      grid-column: 1/-1;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-block: var(--leading-trim);
+      @media (min-width: 768px) {
+        font-size: 2.5rem;
+        grid-column: 2/-1;
+      }
+      @media (min-width: 1025px) {
+        font-size: 2.5rem;
+        grid-column: 2/-1;
+      }
     }
-    @media (min-width: 1025px) {
-      grid-column: 2/-1;
+    .main-image {
+      border-radius: 1rem;
+      grid-column: 1/-1;
+      @media (min-width: 768px) {
+        grid-column: 2/8;
+      }
+      @media (min-width: 1025px) {
+        grid-column: 2/8;
+      }
     }
-  }
-  .title {
-    grid-column: 1/-1;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-block: var(--leading-trim);
-    @media (min-width: 768px) {
-      font-size: 2.5rem;
-      grid-column: 2/-1;
+    .headline {
+      color: var(--color-yellow);
+      font-size: 1.25rem;
+      grid-column: 1/-1;
+      margin-block: var(--leading-trim);
+      margin-block-end: calc(2rem + var(--leading-trim));
+      @media (min-width: 768px) {
+        grid-column: 3/5;
+        margin-block-end: calc(0rem + var(--leading-trim));
+      }
+      @media (min-width: 1025px) {
+        grid-column: 3/5;
+        margin-block-end: calc(0rem + var(--leading-trim));
+      }
     }
-    @media (min-width: 1025px) {
-      font-size: 2.5rem;
-      grid-column: 2/-1;
-    }
-  }
-  .main-image {
-    border-radius: 1rem;
-    grid-column: 1/-1;
-    @media (min-width: 768px) {
-      grid-column: 2/8;
-    }
-    @media (min-width: 1025px) {
-      grid-column: 2/8;
-    }
-  }
-  .headline {
-    font-size: 1.25rem;
-    grid-column: 1/-1;
-    margin-block: var(--leading-trim);
-    margin-block-end: calc(2rem + var(--leading-trim));
-    @media (min-width: 768px) {
-      grid-column: 3/5;
-      margin-block-end: calc(0rem + var(--leading-trim));
-    }
-    @media (min-width: 1025px) {
-      grid-column: 3/5;
-      margin-block-end: calc(0rem + var(--leading-trim));
-    }
-  }
-  .text {
-    grid-column: 1/-1;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-block: var(--leading-trim);
-    @media (min-width: 768px) {
-      font-size: 0.9rem;
-      grid-column: 3/7;
-    }
-    @media (min-width: 1025px) {
-      font-size: 0.9rem;
-      grid-column: 3/7;
-    }
-  }
-  .list {
-    margin-block: var(--leading-trim);
-    grid-column: 1/-1;
-    @media (min-width: 768px) {
-      grid-column: 3/7;
-    }
-    @media (min-width: 1025px) {
-      grid-column: 3/7;
-    }
-    & li {
-      font-weight: 600;
+    .text {
+      grid-column: 1/-1;
       font-size: 0.8rem;
+      font-weight: 600;
+      margin-block: var(--leading-trim);
       @media (min-width: 768px) {
         font-size: 0.9rem;
+        grid-column: 3/7;
       }
       @media (min-width: 1025px) {
         font-size: 0.9rem;
+        grid-column: 3/7;
       }
     }
-  }
-  .link-area {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    grid-column: 1/-1;
-    @media (min-width: 768px) {
-      flex-direction: row;
-      grid-column: 3/-1;
+    .list {
+      margin-block: var(--leading-trim);
+      grid-column: 1/-1;
+      @media (min-width: 768px) {
+        grid-column: 3/7;
+      }
+      @media (min-width: 1025px) {
+        grid-column: 3/7;
+      }
+      & li {
+        font-weight: 600;
+        font-size: 0.8rem;
+        @media (min-width: 768px) {
+          font-size: 0.9rem;
+        }
+        @media (min-width: 1025px) {
+          font-size: 0.9rem;
+        }
+      }
     }
-    @media (min-width: 1025px) {
-      flex-direction: row;
-      grid-column: 3/-1;
+    .link-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      grid-column: 1/-1;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        grid-column: 3/-1;
+      }
+      @media (min-width: 1025px) {
+        flex-direction: row;
+        grid-column: 3/-1;
+      }
     }
-  }
-</style>
+  </style>
+</Layout>
