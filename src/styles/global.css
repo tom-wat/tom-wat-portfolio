@@ -82,6 +82,12 @@ img {
   vertical-align: middle;
 }
 a {
-  background-color: var(--color-yellow);
-  color: var(--color-blue);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transition: color 0.1s, background-color 0.1s;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-yellow);
+    }
+  }
 }
