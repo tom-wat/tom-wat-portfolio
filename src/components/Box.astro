@@ -22,7 +22,7 @@ const {
   columnSp={1}
   gapSp={0}
 >
-<div class="box">
+<section class="box">
 <div class=`left`>
   {imgSrc && 
           <picture class="cover">
@@ -57,7 +57,7 @@ const {
     {hrefExternal && <LinkButton href=`${hrefExternal}` text="サイトへ移動する" iconPath="/icons/external-link.svg" target="_blank"/>}  
   </div>}
 </div>
-</div>
+</section>
 </GridWrapper>
 
 <style>
@@ -65,6 +65,7 @@ const {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1/-1;
+    z-index: 1;
     @media (min-width: 768px) {
       grid-column: 2/8;
     }

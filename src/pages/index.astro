@@ -11,7 +11,7 @@ import "../styles/global.css";
   title="Watabe Tomonari's portfolio"
   description="個人のポートフォリオサイトです。"
 >
-  <body>
+  <main>
     <h1>渡部智成のポートフォリオサイト</h1>
     <BackgroundColumn />
     <div class="wrapper">
@@ -65,12 +65,12 @@ import "../styles/global.css";
         hrefExternal="https://momo-sage.vercel.app/"
       />
     </div>
-  </body>
+  </main>
   <Loading />
 </Layout>
 
 <style>
-  body {
+  main {
     background-color: var(--color-blue);
     color: var(--color-white);
     opacity: 0;
@@ -124,6 +124,7 @@ import "../styles/global.css";
   .title-wrapper {
     /* background-color: hsl(240, 100%, 50%); */
     grid-column: 1/-1;
+    z-index: 1;
     @media (min-width: 768px) {
       grid-column: 2/8;
     }
