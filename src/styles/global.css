@@ -74,11 +74,14 @@ body {
   letter-spacing: 0.03rem;
   line-height: 2;
   text-wrap: balance;
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 a {
-  color: var(--color-yellow);
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
 }
